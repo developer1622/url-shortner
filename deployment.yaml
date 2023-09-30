@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: url-shortner-deployment
+spec:
+  replicas: 1 # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: url-shortner
+  template:
+    metadata:
+      labels:
+        app: url-shortner
+    spec:
+      containers:
+        - name: url-shortner
+          image: ramumangalarapu/basic-non-optimized-url-shortner
+          ports:
+            - containerPort: 8087
