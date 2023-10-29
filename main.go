@@ -66,7 +66,6 @@ func main() {
 		c.Redirect(http.StatusTemporaryRedirect, longURL)
 	})
 
-	// just added comment, which will be reverted
 	// To fetch all the URLs
 	r.GET("/v1/urls", func(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, storage)
